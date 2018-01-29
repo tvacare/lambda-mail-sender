@@ -13,7 +13,6 @@
     "bluebird": "^3.5.1",
     "dotenv": "^4.0.0",
     "nodemailer": "^4.4.2",
-    "nunjucks": "^3.0.1",
-    "redis": "^2.8.0"
+    "nunjucks": "^3.0.1"
   }
 }

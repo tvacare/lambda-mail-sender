@@ -11,7 +11,6 @@
 
 const AWS = require('aws-sdk');
 const Promise = require('bluebird');
-const Redis = require('redis');
 
 const {getSQSMessage} = require('./helper');
 const {deleteSQSMessage} = require('./helper');
@@ -25,8 +24,6 @@ AWS.config.update({
 });
 
 AWS.config.setPromisesDependency(Promise);
-Promise.promisifyAll(Redis.RedisClient.prototype);
-Promise.promisifyAll(Redis.Multi.prototype);
 
 module.exports.sender = (event, context, callback) => {
     const SES = new AWS.SES();
