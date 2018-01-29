@@ -22,7 +22,7 @@ functions:
   sender:
     handler: handler.sender
     events:
-       - sns: arn:aws:sns:us-east-1:629832990358:new_email
+       - sns: ${env:SNS_TOPIC_ARN}
     iamRoleStatements:
       - Effect: Allow
         Resource: "*"
