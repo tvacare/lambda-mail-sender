@@ -27,4 +27,4 @@ For more: check logs on AWS cloudwatch
 * **Thiago Vacare**
 
 ## License
-* **This project is licensed under the MIT License**
+* **MIT**
