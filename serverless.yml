@@ -1,0 +1,43 @@
+service: mail-sender-lambda
+
+provider:
+  name: aws
+  vpc:
+    subnetIds:
+      - ${env:AWS_SUBNET1}
+      - ${env:AWS_SUBNET2}
+    securityGroupIds:
+      - ${env:AWS_SECURITY_GROUP}
+  runtime: nodejs6.10
+  memorySize: ${env:LAMBDA_MEMORY_SIZE}
+  stage: ${env:ENVIRONMENT}
+  region: ${env:AWS_REGION}
+  environment:
+    LAMBDA_PROJECT_NAME: ${env:LAMBDA_PROJECT_NAME}
+  iamRoleStatements:
+    - Effect: Allow
+      Resource: "*"
+      Action:
+        - ses:*
+    - Effect: Allow
+      Resource: "*"
+      Action:
+        - sqs:*
+
+plugins:
+  - serverless-offline
+
+functions:
+  sender:
+    handler: handler.sender
+    events:
+       - sns: arn:aws:sns:us-east-1:629832990358:new_email
+    iamRoleStatements:
+      - Effect: Allow
+        Resource: "*"
+        Action:
+          - ses:*
+      - Effect: Allow
+        Resource: "*"
+        Action:
+          - sqs:*
