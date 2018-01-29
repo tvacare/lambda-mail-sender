@@ -21,10 +21,10 @@ For more: check logs on AWS cloudwatch
 
 ```
 
-* Before testing this lambda function you must configure your AWS SNS, SQS and SES services
+*** Before testing this lambda function you must configure your AWS SNS, SQS and SES services
 
 ## Author
 * **Thiago Vacare**
 
 ## License
-This project is licensed under the MIT License
+* **This project is licensed under the MIT License**
