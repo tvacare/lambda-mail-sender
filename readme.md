@@ -7,9 +7,7 @@
 - Deploy it using serverless or aws sdk
 
 ```
-Create a SQS Queue - send a message to it with the following data:
-
-```
+Create a SQS Queue - send a message to this queue with the following data:
 {
    "template": "template-name",
    "mailTo": "email@email.com",
@@ -17,7 +15,7 @@ Create a SQS Queue - send a message to it with the following data:
    "context": "params"
 }
 ```
-
+```
 Test it usign SNS - publishing a new message to the topic which triggers the lambda function
 For more: check logs on AWS Cloudwatch
 
