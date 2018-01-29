@@ -30,8 +30,6 @@ Promise.promisifyAll(Redis.RedisClient.prototype);
 Promise.promisifyAll(Redis.Multi.prototype);
 
 module.exports.sender = (event, context, callback) => {
-// (function () {
-
     const SES = new AWS.SES();
     const SQS = new AWS.SQS();
 
@@ -65,4 +63,3 @@ module.exports.sender = (event, context, callback) => {
           throw new Error(err)
       });
 };
-// })();

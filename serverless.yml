@@ -2,12 +2,6 @@ service: mail-sender-lambda
 
 provider:
   name: aws
-  vpc:
-    subnetIds:
-      - ${env:AWS_SUBNET1}
-      - ${env:AWS_SUBNET2}
-    securityGroupIds:
-      - ${env:AWS_SECURITY_GROUP}
   runtime: nodejs6.10
   memorySize: ${env:LAMBDA_MEMORY_SIZE}
   stage: ${env:ENVIRONMENT}
@@ -23,9 +17,6 @@ provider:
       Resource: "*"
       Action:
         - sqs:*
-
-plugins:
-  - serverless-offline
 
 functions:
   sender:
