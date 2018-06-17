@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-- See the .env.example, create a new file called '.env' where you should include your environment variables
+- See the .env.example and create a new file called '.env' where you should include your environment variables
 - Install the dependencies
 - Deploy it using serverless or aws sdk
 
@@ -25,6 +25,3 @@ For more: check logs on AWS cloudwatch
 
 ## Author
 * **Thiago Vacare**
-
-## License
-* **MIT**
